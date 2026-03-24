@@ -4,37 +4,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Geneva Ecola</title>
-  <style>
-    :root {
-      --bg: #f8f6f4;
-      --text: #1f1f1f;
-      --muted: #6b6b6b;
-      --accent: #8a5c6b;
-      --card: #ffffff;
-      --line: #e8dfda;
-    }
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">Geneva Ecola</div>
+      <nav class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    * {
-      box-sizing: border-box;
-    }
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Stanford Electrical Engineering</div>
+          <h1>Wireless systems for low-power sensing and communication</h1>
+          <p class="lead">
+            I am a PhD candidate at Stanford working on ultra-low-power sensing,
+            backscatter communication, and wireless systems that make use of
+            ambient radio frequency signals.
+          </p>
+          <div class="button-row">
+            <a class="button button-primary" href="research.html">View Research</a>
+            <a class="button button-secondary" href="contact.html">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-image"></div>
+      </div>
+    </section>
 
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Featured Research</h2>
+        <p class="section-subtitle">
+          A few areas of my current work.
+        </p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>SARLink</h3>
+            <p>
+              Exploring satellite backscatter connectivity using synthetic
+              aperture radar signals.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Thermal Noise Backscatter</h3>
+            <p>
+              Investigating communication and sensing systems that operate
+              through thermal noise and extreme power constraints.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Low-Power Wireless Sensing</h3>
+            <p>
+              Designing wireless sensing systems that do more with less by using
+              ambient signals and efficient hardware.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    <section class="section">
+      <div class="container split">
+        <div class="image-card"></div>
+        <div class="card">
+          <h2 class="section-title">About</h2>
+          <p>
+            My research sits at the intersection of wireless communication,
+            sensing, electromagnetics, and low-power systems. I am especially
+            interested in how ambient signals can enable new sensing and
+            communication capabilities under tight resource constraints.
+          </p>
+          <p>
+            This site highlights my research, publications, and ongoing work.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    header {
-      padding: 88px 0 56px;
-      border-bottom: 1px solid var(--line);
+  <footer class="site-footer">
+    <div class="container">© 2026 Geneva Ecola</div>
+  </footer>
+</body>
+</html>      border-bottom: 1px solid var(--line);
     }
 
     .hero {
