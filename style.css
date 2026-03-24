@@ -229,3 +229,15 @@ h1 {
     font-size: 2.6rem;
   }
 }
+
+.hero-image{
+  overflow: hidden;
+}
+
+.hero-image img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 28px;
+}
