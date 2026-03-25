@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#A06C8E"/>
+  <text x="32" y="39"
+        text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="25"
+        font-weight="700"
+        fill="#FFF9F8"
+        letter-spacing="-1.5">GE</text>
+</svg>
