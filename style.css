@@ -382,3 +382,20 @@ h1 {
     justify-content: center;
   }
 }
+
+.news-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.news-item h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.news-item + .news-item {
+  border-top: 1px solid #e6e0f5;
+  padding-top: 1.25rem;
+}
