@@ -413,3 +413,22 @@ h1 {
 .email a:hover {
   text-decoration: underline;
 }
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-email {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+}
+
+.header-email a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header-email a:hover {
+  text-decoration: underline;
+}
