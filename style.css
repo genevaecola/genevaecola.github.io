@@ -429,3 +429,36 @@ h1 {
 .site-header {
   padding: 0.9rem 0;
 }
+.experience-list {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+}
+
+.experience-item {
+  margin-bottom: 20px; /* Space between entries */
+  padding: 20px;
+  border: 1px solid var(--line); /* Optional: border around each item */
+  border-radius: 10px; /* Rounded corners for better aesthetics */
+  background: var(--surface); /* Background color to match the design */
+  transition: box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Add shadow on hover for depth */
+}
+
+.experience-item h3 {
+  margin: 0; /* Remove default margin for headings */
+  font-size: 1.5rem; /* Increase font size for better visibility */
+  color: var(--text); /* Main text color */
+}
+
+.experience-dates {
+  color: var(--muted); /* Muted color for dates */
+  font-weight: 600; /* Slightly bold */
+  margin: 5px 0; /* Space around dates */
+}
+
+.experience-item p {
+  margin: 5px 0; /* Adjust margins for paragraph text */
+}
