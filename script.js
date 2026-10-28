@@ -1,4 +1,13 @@
 (() => {
+  // Show text badges until the user-supplied local logo files are available.
+  document.querySelectorAll('.brand-image[data-src]').forEach(image => {
+    image.addEventListener('load', () => {
+      if (image.naturalWidth > 0) image.parentElement.classList.add('is-loaded');
+    }, {once: true});
+    image.addEventListener('error', () => image.remove(), {once: true});
+    image.loading = 'lazy';
+    image.src = image.dataset.src;
+  });
   const links = Array.from(document.querySelectorAll('.section-links a'));
   const sections = links.map(link => document.getElementById(link.hash.slice(1)));
   const mobile = window.matchMedia('(max-width: 760px)');

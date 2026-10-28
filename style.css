@@ -10,3 +10,174 @@
 /* Plain introduction with the same scale as other academic sections. */
 #about-title{font-size:2rem;line-height:1.25;letter-spacing:-.02em;margin:0 0 22px}.about-copy{max-width:850px;font-size:1.06rem;color:var(--text)}.about-copy p{margin:0 0 20px}.about-copy p:last-child{margin-bottom:0}
 @media(max-width:760px){#about-title{font-size:1.75rem}.about-copy{font-size:1rem}}
+
+/* Affiliation and title share a heading; dates sit on the right. */
+.cv-entry{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:start;column-gap:24px;row-gap:16px;padding:25px 24px}
+.cv-entry.has-mark{grid-template-columns:112px minmax(0,1fr) max-content;align-items:center}
+.entry-content{min-width:0}
+.cv-entry h3{font-size:1.18rem;font-weight:600;line-height:1.55;margin:0}
+.cv-entry h3 .entry-org{display:inline;color:var(--accent);font-weight:700;margin:0}
+.cv-entry h3 a.entry-org:hover{text-decoration:underline;text-underline-offset:4px}
+.cv-entry h3 .entry-role{display:inline;font:inherit;color:var(--text)}
+.entry-separator{color:var(--muted);font-weight:400}
+.cv-entry p{font-size:1.05rem;line-height:1.7;margin:10px 0 0;color:#5f596a}
+.cv-entry>.cv-date{font-size:1.05rem;line-height:1.55;text-align:right;align-self:start;font-weight:700;padding-top:2px;color:#111;overflow-wrap:normal;white-space:nowrap;letter-spacing:.025em;font-variant-numeric:tabular-nums}
+.cv-entry.has-mark>.cv-date{align-self:center}
+.degree-dates{display:flex;flex-direction:column;gap:10px}
+.degree-dates span{display:block}
+.affiliation-mark{position:relative;width:112px;height:90px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.mark-fallback{text-align:center;font-size:1rem;line-height:1.25;font-weight:700;padding:7px;color:#343434}
+.brand-stanford .mark-fallback{color:#8c1515;font-family:Georgia,serif;font-size:1.25rem;font-weight:400}
+.brand-hmc .mark-fallback{color:#333;font-size:.9rem;border-bottom:4px solid #eaaa00}
+.brand-s4 .mark-fallback{color:#8c1515;font-size:.85rem}
+.brand-tesla .mark-fallback{color:#c82026;letter-spacing:.1em;font-size:1.15rem}
+.brand-trellisware .mark-fallback{color:#214e7a;font-size:.9rem}
+.brand-echodyne .mark-fallback{color:#006ca9;font-size:.9rem}
+.brand-apple .mark-fallback{font-size:1.35rem;color:#111}
+.brand-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:9px;background:#fff;opacity:0}
+.brand-apple .brand-image,.brand-tesla .brand-image{padding:15px}
+.affiliation-mark.is-loaded .brand-image{opacity:1}
+.affiliation-mark.is-loaded .mark-fallback{visibility:hidden}
+.subsection-title{font-size:1.2rem}
+.card p,.publication-content p{font-size:1.05rem}
+.publication-content h3{font-size:1.18rem}
+.service-block{display:block;margin-top:32px}
+.service-copy>.subsection-title{margin:0 0 18px}
+.service-photo{width:min(100%,680px);margin:28px auto 0;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.service-photo a{display:block}
+.service-photo a:focus-visible{outline-offset:-4px}
+.service-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;object-position:center}
+.service-photo figcaption{padding:15px 20px;font-size:1.05rem;line-height:1.5;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+@media (min-width:761px) and (max-width:1100px){
+ .cv-entry{grid-template-columns:minmax(0,1fr) max-content;gap:18px;padding:22px 20px}
+ .cv-entry.has-mark{grid-template-columns:100px minmax(0,1fr) max-content}
+ .affiliation-mark{width:100px;height:84px}
+}
+@media (max-width:760px){
+ .cv-entry{grid-template-columns:minmax(0,1fr) max-content;gap:14px;padding:20px 18px}
+ .cv-entry.has-mark{grid-template-columns:100px minmax(0,1fr);align-items:center}
+ .cv-entry.has-mark>.affiliation-mark{grid-column:1;grid-row:1}
+ .cv-entry.has-mark>.cv-date{grid-column:2;grid-row:1}
+ .cv-entry.has-mark>.entry-content{grid-column:1 / -1;grid-row:2}
+ .affiliation-mark{width:100px;height:78px}
+ .cv-entry h3{font-size:1.15rem}
+ .cv-entry>.cv-date{font-size:1.05rem}
+ .service-photo{margin:24px auto 0}
+}
+@media (max-width:480px){
+ .cv-entry:not(.has-mark){grid-template-columns:1fr}
+ .cv-entry.has-mark{grid-template-columns:80px minmax(0,1fr)}
+ .cv-entry.has-mark>.affiliation-mark{width:80px}
+ .cv-entry>.degree-dates{white-space:normal;max-width:100%;letter-spacing:0}
+ .degree-dates span{line-height:1.6}
+ .cv-entry:not(.has-mark)>.cv-date{grid-column:1;grid-row:1;justify-self:end}
+ .cv-entry:not(.has-mark)>.entry-content{grid-column:1;grid-row:2}
+}
+@media print{
+ .service-photo{width:65%;margin:16px auto;break-inside:avoid}
+ .affiliation-mark{box-shadow:none}
+}
+
+/* Shared columns align both Stanford degrees and their dates. */
+#education .cv-entry+.cv-entry{border-top:1px solid var(--line)}
+.cv-entry.education-combined{grid-template-columns:112px minmax(0,1fr)}
+.degree-table{display:grid;grid-template-columns:max-content minmax(0,1fr) max-content;column-gap:12px;row-gap:14px}
+.degree-row{display:grid;grid-template-columns:subgrid;grid-column:1 / -1;align-items:baseline}
+.degree-row h3{display:contents}
+.degree-row .entry-org{grid-column:1;white-space:nowrap}
+.degree-row .entry-org::after{content:" ·";color:var(--muted);font-weight:400}
+.degree-row .entry-role{grid-column:2;font-size:1.18rem;font-weight:600;line-height:1.55}
+.degree-row>.cv-date{grid-column:3;font-size:1.05rem;font-weight:700;color:#111;white-space:nowrap;text-align:right;line-height:1.55;letter-spacing:.025em;font-variant-numeric:tabular-nums}
+@media (min-width:761px) and (max-width:1100px){
+ .cv-entry.education-combined{grid-template-columns:100px minmax(0,1fr)}
+}
+@media (max-width:760px){
+ .cv-entry.education-combined{grid-template-columns:100px minmax(0,1fr)}
+ .degree-table{grid-template-columns:minmax(0,1fr) max-content;gap:16px 14px}
+ .degree-row .entry-org{grid-column:1 / -1;margin-bottom:6px}
+ .degree-row .entry-org::after{content:""}
+ .degree-row .entry-role{grid-column:1;font-size:1.15rem}
+ .degree-row>.cv-date{grid-column:2}
+}
+@media (max-width:480px){
+ .cv-entry.education-combined{grid-template-columns:80px minmax(0,1fr)}
+ .degree-table{column-gap:10px}
+}
+
+/* Center service photos beside the complete list, below its heading. */
+@media screen and (min-width:1101px){
+ .service-block{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);grid-template-rows:auto auto;gap:0 28px;align-items:start}
+ .service-copy{display:contents}
+ .service-copy>.subsection-title{grid-column:1;grid-row:1}
+ .service-copy>.cv-list{grid-column:1;grid-row:2;min-width:0}
+ .service-block>.service-photo{grid-column:2;grid-row:2;align-self:center;justify-self:center;width:100%;margin:0}
+ .service-copy .cv-entry{column-gap:18px;padding:22px 20px}
+}
+
+/* Give service roles a consistent line beneath the organization. */
+#service .cv-entry .service-role{font-size:1.18rem;font-weight:600;line-height:1.5;color:var(--text);margin:5px 0 0}
+@media (max-width:760px){
+ #service .cv-entry .service-role{font-size:1.15rem}
+ .service-photo{width:100%;max-width:680px}
+}
+
+/* Let logos and photos stand on their own without surrounding cards. */
+.affiliation-mark{background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+.brand-image{background:transparent}
+.brand-hmc .mark-fallback{border:0}
+.brand-hmc .brand-image{width:76px;height:76px;left:50%;top:50%;right:auto;bottom:auto;transform:translate(-50%,-50%);padding:0;border-radius:14px}
+.service-photo{background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+.service-photo figcaption{border-top:0}
+.sidebar-portrait{border:0;box-shadow:none}
+#service .cv-entry .reviewer-journal{margin:8px 0 0}
+
+/* One Stanford identity, with individual teaching roles and dates. */
+.cv-entry.teaching-group{grid-template-columns:112px minmax(0,1fr);align-items:start}
+.teaching-group>.affiliation-mark{align-self:start}
+.teaching-roles{list-style:none;margin:18px 0 0;padding:0}
+.teaching-role{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:20px;align-items:baseline}
+.teaching-role+.teaching-role{margin-top:26px}
+.teaching-role-content{min-width:0}
+.teaching-role h4{font-size:1.18rem;line-height:1.55;font-weight:600;margin:0}
+.teaching-role>.cv-date{font-size:1.05rem;font-weight:700;color:#111;text-align:right;align-self:baseline;white-space:nowrap;line-height:1.55;letter-spacing:.025em;font-variant-numeric:tabular-nums}
+@media (min-width:761px) and (max-width:1100px){
+ .cv-entry.teaching-group{grid-template-columns:100px minmax(0,1fr)}
+}
+@media (max-width:760px){
+ .cv-entry.teaching-group{grid-template-columns:100px minmax(0,1fr)}
+ .teaching-role{gap:14px}
+ .teaching-role h4{font-size:1.15rem}
+}
+@media (max-width:480px){
+ .cv-entry.teaching-group{grid-template-columns:80px minmax(0,1fr)}
+}
+
+/* Give every date in a section the same centered column. */
+.section{--date-column:9.5rem}
+.cv-entry{grid-template-columns:minmax(0,1fr) var(--date-column)}
+.cv-entry.has-mark{grid-template-columns:112px minmax(0,1fr) var(--date-column)}
+.cv-entry>.cv-date,.degree-row>.cv-date,.teaching-role>.cv-date{width:var(--date-column);text-align:center;justify-self:center;align-self:center}
+.degree-table{grid-template-columns:max-content minmax(0,1fr) var(--date-column)}
+.teaching-role{grid-template-columns:minmax(0,1fr) var(--date-column)}
+.cv-entry.education-combined,.cv-entry.teaching-group{grid-template-columns:112px minmax(0,1fr)}
+@media (min-width:761px) and (max-width:1100px){
+ .cv-entry.has-mark{grid-template-columns:100px minmax(0,1fr) var(--date-column)}
+ .cv-entry.education-combined,.cv-entry.teaching-group{grid-template-columns:100px minmax(0,1fr)}
+}
+@media (max-width:760px){
+ .section{--date-column:9rem}
+ .cv-entry.has-mark{grid-template-columns:100px minmax(0,1fr)}
+ .cv-entry.has-mark>.cv-date{justify-self:end}
+ .degree-table{grid-template-columns:minmax(0,1fr) var(--date-column)}
+}
+@media (max-width:480px){
+ .cv-entry:not(.has-mark){grid-template-columns:1fr}
+ .cv-entry:not(.has-mark)>.cv-date{justify-self:end}
+ .cv-entry.has-mark,.cv-entry.education-combined,.cv-entry.teaching-group{grid-template-columns:80px minmax(0,1fr)}
+}
+
+/* Crop empty wall above the MobiSys group; keep the original linked. */
+.service-photo.mobisys-photo img{aspect-ratio:4/3;object-fit:cover;object-position:50% 78%}
+
+
+.publication-content .publication-takeaway{color:var(--accent-dark);font-size:1.05rem;line-height:1.55;margin:0 0 12px}
