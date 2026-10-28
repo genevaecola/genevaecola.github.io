@@ -181,3 +181,17 @@
 
 
 .publication-content .publication-takeaway{color:var(--accent-dark);font-size:1.05rem;line-height:1.55;margin:0 0 12px}
+
+/* Local images are visible immediately; missing files show their text label. */
+.affiliation-mark .brand-image{opacity:1}
+.affiliation-mark .mark-fallback{display:none}
+.affiliation-mark.is-missing .brand-image{display:none}
+.affiliation-mark.is-missing .mark-fallback{display:block;visibility:visible}
+/* Keep degree columns within the available tablet content width. */
+@media (min-width:761px) and (max-width:1100px){
+ .degree-table{grid-template-columns:minmax(0,1fr) var(--date-column)}
+ .degree-row .entry-org{grid-column:1 / -1;margin-bottom:6px}
+ .degree-row .entry-org::after{content:""}
+ .degree-row .entry-role{grid-column:1}
+ .degree-row>.cv-date{grid-column:2}
+}

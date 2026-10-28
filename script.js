@@ -1,12 +1,9 @@
 (() => {
-  // Show text badges until the user-supplied local logo files are available.
-  document.querySelectorAll('.brand-image[data-src]').forEach(image => {
-    image.addEventListener('load', () => {
-      if (image.naturalWidth > 0) image.parentElement.classList.add('is-loaded');
-    }, {once: true});
-    image.addEventListener('error', () => image.remove(), {once: true});
-    image.loading = 'lazy';
-    image.src = image.dataset.src;
+  // Logos have ordinary local src paths and render without JavaScript.
+  document.querySelectorAll('.brand-image').forEach(image => {
+    const showFallback = () => image.parentElement.classList.add('is-missing');
+    image.addEventListener('error', showFallback, {once: true});
+    if (image.complete && image.naturalWidth === 0) showFallback();
   });
   const links = Array.from(document.querySelectorAll('.section-links a'));
   const sections = links.map(link => document.getElementById(link.hash.slice(1)));
